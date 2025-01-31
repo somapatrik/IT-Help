@@ -10,8 +10,13 @@
                 <ResourceDictionary Source="Style/Colors.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-            <Style x:Key="redgrid" TargetType="Grid">
-                <Setter Property="Background" Value="{StaticResource Gray100Brush}"/>
+            <Style x:Key="InfoBorder" TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Background" Value="{StaticResource WhiteBrush}"/>
+                <Setter Property="BorderBrush" Value="{StaticResource Gray400Brush}"/>
+                <Setter Property="BorderThickness" Value=".5"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>
