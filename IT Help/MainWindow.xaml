@@ -14,22 +14,33 @@
         <converters:ValuesToPercentConverter x:Key="ValuesToPercent"/>
     </Window.Resources>
     
+    
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
 
         <Border Grid.Row="0" 
                 Background="{StaticResource WhiteBrush}">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Content="{Binding CompanyName}" Style="{StaticResource companyName}"/>
+
+            </Grid>
             
-            <Label Content="{Binding CompanyName}"/>
+           
         
         </Border>
 
-        <Border Grid.Row="1" Background="{StaticResource GithubLightBrush}">
+        <Border Grid.Row="1" Background="{StaticResource WhiteBrush}">
 
             <Grid>
 
@@ -46,6 +57,7 @@
                     </StackPanel>
                 </Border>
 
+                <!-- Drives -->
                 <ItemsControl Grid.Column="1" ItemsSource="{Binding Drives}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -57,6 +69,7 @@
                             <Border Style="{StaticResource InfoBorder}">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
                                         <ColumnDefinition Width="*"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
@@ -66,10 +79,14 @@
                                         <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
 
-                                    <Label Content="{Binding Name}"/>
-                                    <Label Grid.Column="1" Content="{Binding Label}"/>
+                                    <Image Grid.Column="0" Grid.RowSpan="3" 
+                                           Source="Images/Disks/hard-drive.png" Stretch="Uniform" MaxWidth="64" Margin="5,5,10,5"/>
 
-                                    <ProgressBar Grid.Row="1" Grid.ColumnSpan="2" Height="3" Foreground="{StaticResource PrimaryBrush}">
+
+                                    <Label Grid.Column="1" Content="{Binding Name}"/>
+                                    <Label Grid.Column="2" Content="{Binding Label}"/>
+
+                                    <ProgressBar Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Height="3" Foreground="{StaticResource PrimaryBrush}">
                                         <ProgressBar.Value>
                                             <MultiBinding Converter="{StaticResource ValuesToPercent}" Mode="OneWay">
                                                 <Binding Path="AvailableFreeSpace"/>
@@ -77,8 +94,8 @@
                                             </MultiBinding>
                                         </ProgressBar.Value>
                                     </ProgressBar>
-                                    <Label Grid.Row="2" Content="{Binding AvailableFreeSpace, Converter={StaticResource BytesToGigabytes}}"/>
-                                    <Label Grid.Row="2" Grid.Column="1" Content="{Binding TotalSize, Converter={StaticResource BytesToGigabytes}}" HorizontalContentAlignment="Right"/>
+                                    <Label Grid.Row="2" Grid.Column="1" Content="{Binding AvailableFreeSpace, Converter={StaticResource BytesToGigabytes}}"/>
+                                    <Label Grid.Row="2" Grid.Column="2" Content="{Binding TotalSize, Converter={StaticResource BytesToGigabytes}}" HorizontalContentAlignment="Right"/>
 
 
                                 </Grid>

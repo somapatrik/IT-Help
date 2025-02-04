@@ -38,8 +38,8 @@ namespace IT_Help.ViewModels
         {
             await ConfigurationInit();
             await LoadConfig();
-            LoadMachine();
-            LoadDrives();
+            await LoadMachine();
+            await LoadDrives();
         }
 
         private async Task LoadConfig()

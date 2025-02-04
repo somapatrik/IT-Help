@@ -4,6 +4,7 @@
     {
         public string ImageLogo { get; set; }
         public string CompanyName { get; set; }
+        public string TopRightMessage { get; set; }
 
 
         public static AppConfig CreateExample()

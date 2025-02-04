@@ -10,8 +10,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\Disks\cd.png" />
+    <None Remove="Images\Disks\cd_dark.png" />
+    <None Remove="Images\Disks\flash-drive-dark.png" />
+    <None Remove="Images\Disks\flash-drive.png" />
+    <None Remove="Images\Disks\folder.png" />
+    <None Remove="Images\Disks\folder_dark.png" />
+    <None Remove="Images\Disks\hard-drive-dark.png" />
+    <None Remove="Images\Disks\hard-drive.png" />
+    <None Remove="Images\Disks\network-disk.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Disks\cd.png" />
+    <Resource Include="Images\Disks\cd_dark.png" />
+    <Resource Include="Images\Disks\flash-drive-dark.png" />
+    <Resource Include="Images\Disks\flash-drive.png" />
+    <Resource Include="Images\Disks\folder.png" />
+    <Resource Include="Images\Disks\folder_dark.png" />
+    <Resource Include="Images\Disks\hard-drive-dark.png" />
+    <Resource Include="Images\Disks\hard-drive.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Disks\network-disk.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\" />
   </ItemGroup>
 
 </Project>
